@@ -1,0 +1,31 @@
+<div class="edit">
+  <h3>Edit event</h3>
+  <div class="row">
+    <button class="btn btn-warning btn-xs col-md-offset-8"><a href="/events">Back</a></button><br><br>
+    <form action="/events/<%= @evt.id %>" method="post" class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3">
+      <input type="hidden" name="_method" value="patch">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      
+      <div class="form-group">
+        <label for="evt_name">Event name</label>
+        <input type="text" name="event[name]" id="evt_name" class="form-control" value="<%= @evt.name %>">
+      </div>
+
+      <div class="form-group">
+        <label for="evt_date">Date</label>
+        <input type="date" name="event[date]" id="evt_date" class="form-control" value="<%= @evt.date %>">    
+      </div>
+      
+      <div class="form-group">
+        <label for="evt_location">Location</label>
+        <input type="text" name="event[location]" id="evt_location" class="form-control" value="<%= @evt.location %>">    
+      </div>
+
+      <div class="form-group">
+        <label for="evt_state">State</label>
+        <input type="text" name="event[state]" id="evt_state" class="form-control" value="<%= @evt.state %>">    
+      </div>
+      <input type="submit" name="submit" value="Save" class="btn btn-info">
+    </form>
+  </div>
+</div>

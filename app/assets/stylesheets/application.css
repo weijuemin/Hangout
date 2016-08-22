@@ -1,0 +1,118 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+.mainbg {
+  background-image: url('/images/bg1.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(256,256,256,.85);
+}
+.navbar {
+  border-radius: 0;
+  margin-bottom: 30vh;
+}
+.container {
+  width: 65%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.header {
+  width: 100%;
+  height: 1%;
+  background-color: #000;
+  color: #fff;
+  padding: 3px 0 3px 3%;
+  font-style: italic;
+}
+.switch {
+  display: block;
+  margin: 2% auto;
+}
+h3 {
+  font-weight: bold;
+  margin: 3% auto;
+  text-align: center;
+}
+.location{
+  width: 65%;
+  display: inline-block;
+}
+.addEvtForm {
+  background: rgb(174,245,205);
+  border-radius: 7px;
+  position: absolute;
+  top: 25%;
+  left: 34%;
+  padding: 3% 0;
+  z-index: 11;
+}
+.veil {
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14,39,42, .9);
+  z-index: 10;
+}
+select {
+  border-radius: 5px;
+  padding: 1%;
+  display:inline-block;
+  width: 30%;
+}
+.err {
+  margin: 0 auto;
+  width: 100%;
+  padding: 4px 0;
+  background-color: #fff;
+  color: darkred;
+}
+.errMsg {
+  font-style: italic;
+  text-align: center;
+}
+.topright {
+  position: absolute;
+  right: 5px;
+  padding: 0;
+  font-style: normal;
+}
+.button_to {
+  display: inline-block;
+}
+.btn-link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.inline {
+  display: inline;
+  font-size: 12px;
+  padding:0;
+  margin:0;
+}
+.dname {
+  font-style: italic;
+  font-size: 12px;
+}
+.discdisplay {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+.discontent {
+  border-bottom: 1px solid gray;
+}
+.discontent:last-child {
+  border-bottom: none;
+}
+textarea[name="comment"] {
+  margin-bottom: 5px;
+}

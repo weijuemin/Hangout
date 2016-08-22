@@ -1,0 +1,62 @@
+<h3>Event details</h3>
+
+<table class="evtInfo table table-striped">
+  <tr>
+    <th>Name:</th>
+    <td><%= @thisEvt.name %></td>
+  </tr>
+  <tr>
+    <th>Date:</th>
+    <td><%= @thisEvt.date %></td>
+  </tr>
+  <tr>
+    <th>Location:</th>
+    <td><%= @thisEvt.location %> <%= @thisEvt.state %></td>
+  </tr>
+  <tr>
+    <th>Host:</th>
+    <td><%= @thisEvt.user.first_name %> <%= @thisEvt.user.last_name %></td>
+  </tr>
+</table>
+
+<hr>
+<div class="row">
+  <% if @attendees.count > 0 %>
+  <div class="col-lg-6 col-md-6 col-sm-10">
+  <table class="table table-striped">
+    <caption>People who's attending this event:</caption>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>State</th>
+    </tr>
+    <% @attendees.each do |a| %>
+    <tr>
+      <td><%= a.first_name %> <%= a.last_name %></td>
+      <td><%= a.location %></td>
+      <td><%= a.state %></td>
+    </tr>
+    <% end -%>
+  </table>
+  <% end -%>
+  </div>
+  <div class="discussion col-lg-5 col-md-5 col-sm-10 col-sm-offset-1">
+    <h4>Discussions</h4><hr>
+    <% if @discussions.count > 0 %>
+    <div class="discdisplay">
+      <% @discussions.each do |d| %>
+      <p class="discontent">
+        <span class="dname"><%= d.user.first_name %> <%= d.user.last_name %> says:</span> <%= d.content %> <%= button_to "Delete", "/comment/delete/#{d.id}", method: :delete, class: "btn btn-link inline" %>
+      </p>
+      <% end -%>
+    </div>
+    <% else %>
+      <p>No discussions yet.</p>
+    <% end -%>
+    <form action="/comment/<%= @thisEvt.id %>" method="post" class="form-group addCmt">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <textarea class="form-control" name="comment" placeholder="Comment to this event..."></textarea>
+      <input type="submit" class="btn btn-info btn-sm" name="submit" value="Comment">      
+    </form>
+  </div>
+</div>
